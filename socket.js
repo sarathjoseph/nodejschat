@@ -1,6 +1,7 @@
 var http = require("http");
 var fs = require("fs");
 var users = new Array();
+var port=process.env.PORT||4444;
 idle = new Array();
 
 var server = http.createServer(function (req, res) {
@@ -17,7 +18,7 @@ var server = http.createServer(function (req, res) {
 
 
 
-}).listen(4444);
+}).listen(port);
 
 
 io = require("socket.io").listen(server, {
