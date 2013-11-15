@@ -92,22 +92,12 @@
 
         });
 
-        function checkName(nm) {
+        function checkName(nm,array) {
 
-            for (var i = 0; i < users.length; i++) {
-
-
-                if (users[i] === nm) {
-
-                    alert("User already exits. Choose another name");
-                    return false;
-                } 
-            }
-
-            for (var i = 0; i < idleusers.length; i++) {
+            for (var i = 0; i < array.length; i++) {
 
 
-                if (idleusers[i] === nm) {
+                if (array[i] === nm) {
 
                     alert("User already exits. Choose another name");
                     return false;
@@ -121,7 +111,7 @@
             counter++;
             if (counter === 1) {
                 name = document.getElementById("name").value;
-                if (name.trim() != '' && name.trim() != 'me' && checkName(name)) {
+                if (name.trim() != '' && name.trim() != 'me' && checkName(name,users) &&checkName(name,idleusers)) {
 
                     namebox.innerHTML = "<font color='maroon'> Welcome " + name + "</font>" + "<br/><hr width='40%' align='left'/><br/>";
                 } else {
