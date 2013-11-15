@@ -2,7 +2,7 @@
 
 <head>
     <title id="title">
-        cHATS
+        CHAT
     </title>
     <link rel="icon" type="image/gif" href="http://icons.iconarchive.com/icons/custom-icon-design/office/256/chat-icon.png" />
     <script src="/socket.io/socket.io.js">
@@ -92,16 +92,28 @@
 
         });
 
-        function checkName(nm,array) {
+        function checkName(nm) {
 
-            for (var i = 0; i < array.length; i++) {
+            for (var i = 0; i < users.length; i++) {
 
-                if (array[i] === nm) {
+
+                if (users[i] === nm) {
 
                     alert("User already exits. Choose another name");
                     return false;
-                }
+                } 
             }
+
+            for (var i = 0; i < idleusers.length; i++) {
+
+
+                if (idleusers[i] === nm) {
+
+                    alert("User already exits. Choose another name");
+                    return false;
+                } 
+            }
+
             return true;
         }
 
@@ -109,7 +121,7 @@
             counter++;
             if (counter === 1) {
                 name = document.getElementById("name").value;
-                if (name.trim() != '' && name.trim() != 'me' && checkName(name,users) && checkName(name,idleusers)) {
+                if (name.trim() != '' && name.trim() != 'me' && checkName(name)) {
 
                     namebox.innerHTML = "<font color='maroon'> Welcome " + name + "</font>" + "<br/><hr width='40%' align='left'/><br/>";
                 } else {
