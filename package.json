@@ -1,14 +1,1 @@
-{
-
-"name":"first_example",
-"version": "0.0.1",
-"private": true,
-"dependencies":{
-	"socket.io":"0.9.16"
-}
-
-
-
-
-
-}
+{"name":"first_example","version":"0.0.1-1","private":true,"dependencies":{"socket.io":"0.9.16"},"subdomain":"josephchat","scripts":{"start":"node socket.js"},"engines":{"node":"0.10.x"}}
