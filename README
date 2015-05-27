@@ -1,4 +1,7 @@
 
-Simple Chat server in nodejs written using the socket.io library
+### Chat server
 
-Chat box supports embed (video, games, text, images ,html)
+```
+  No libraries used except Socket.io
+  Chat box supports iframe embeds
+```
